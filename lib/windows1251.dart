@@ -3,73 +3,71 @@ import 'dart:typed_data' show Uint8List;
 
 import 'src/symbols.dart';
 
-/// An instance of the default implementation of the [CP1251Codec].
+/// An instance of the default implementation of the [Windows1251Codec].
 ///
-/// This instance provides a convenient access to the most common CP 1251
+/// This instance provides a convenient access to the most common Windows-1251
 /// use cases.
 ///
 /// Examples:
 /// ```dart
-/// var encoded = cp1251.encode('Привет!');
-/// var decoded = cp1251.decode([0xCF, 0xF0, 0xE8, 0xE2, 0xE5, 0xF2, 0x21]);
+/// var encoded = windows1251.encode('Привет!');
+/// var decoded = windows1251.decode([0xCF, 0xF0, 0xE8, 0xE2, 0xE5, 0xF2, 0x21]);
 /// ```
-const CP1251Codec cp1251 = CP1251Codec();
+const Windows1251Codec windows1251 = Windows1251Codec();
 
-/// A `CP1251Codec` encodes strings to Windows-1251 code units (bytes)
+/// A `Windows1251Codec` encodes strings to Windows-1251 code units (bytes)
 /// and decodes Windows-1251 code units to strings.
-class CP1251Codec extends Encoding {
-  /// Instantiates a new [CP1251Codec].
+class Windows1251Codec extends Encoding {
+  /// Instantiates a new [Windows1251Codec].
   ///
-  /// If [allowInvalid] is true, the [decode] method and the converter
-  /// returned by [decoder] will default to allowing invalid values.
-  /// If allowing invalid values, the values will be decoded into the Unicode
-  /// Replacement character (U+FFFD). If not, an exception will be thrown.
-  /// Calls to the [decode] method can choose to override this default.
-  ///
-  /// Encoders will not accept invalid (non Windows-1251) characters.
-  const CP1251Codec({this.allowInvalid = false});
+  /// If [allowInvalid] is true, the [decode] & [encode] methods and the
+  /// converters returned by [decoder] & [encoder] will default to allowing
+  /// invalid values. If allowing invalid values, the values will be decoded
+  /// into the Unicode Replacement character (U+FFFD) and encoded into '?'
+  /// character. If not, an exception will be thrown.
+  const Windows1251Codec({this.allowInvalid = false});
 
   final bool allowInvalid;
 
-  /// The name of this codec, 'cp1251'.
+  /// The name of this codec, 'windows1251'.
   @override
   String get name {
-    return 'cp1251';
-  }
-
-  @override
-  Uint8List encode(String input) {
-    final encoding = allowInvalid
-        ? const CP1251Encoder(allowInvalid: true)
-        : const CP1251Encoder(allowInvalid: false);
-    return encoding.convert(input);
+    return 'windows1251';
   }
 
   @override
   String decode(List<int> encoded, {bool? allowInvalid}) {
     final encoding = allowInvalid ?? this.allowInvalid
-        ? const CP1251Decoder(allowInvalid: true)
-        : const CP1251Decoder(allowInvalid: false);
+        ? const Windows1251Decoder(allowInvalid: true)
+        : const Windows1251Decoder(allowInvalid: false);
     return encoding.convert(encoded);
   }
 
   @override
-  CP1251Encoder get encoder {
-    return allowInvalid
-        ? const CP1251Encoder(allowInvalid: true)
-        : const CP1251Encoder(allowInvalid: false);
+  Uint8List encode(String input, {bool? allowInvalid}) {
+    final encoding = allowInvalid ?? this.allowInvalid
+        ? const Windows1251Encoder(allowInvalid: true)
+        : const Windows1251Encoder(allowInvalid: false);
+    return encoding.convert(input);
   }
 
   @override
-  CP1251Decoder get decoder {
+  Windows1251Decoder get decoder {
     return allowInvalid
-        ? const CP1251Decoder(allowInvalid: true)
-        : const CP1251Decoder(allowInvalid: false);
+        ? const Windows1251Decoder(allowInvalid: true)
+        : const Windows1251Decoder(allowInvalid: false);
+  }
+
+  @override
+  Windows1251Encoder get encoder {
+    return allowInvalid
+        ? const Windows1251Encoder(allowInvalid: true)
+        : const Windows1251Encoder(allowInvalid: false);
   }
 }
 
-class CP1251Encoder extends Converter<String, List<int>> {
-  const CP1251Encoder({this.allowInvalid = false});
+class Windows1251Encoder extends Converter<String, List<int>> {
+  const Windows1251Encoder({this.allowInvalid = false});
 
   final bool allowInvalid;
 
@@ -122,7 +120,7 @@ class _EncoderSink extends StringConversionSinkBase {
 
   final ByteConversionSink sink;
 
-  final CP1251Encoder encoder;
+  final Windows1251Encoder encoder;
 
   @override
   void close() {
@@ -144,8 +142,8 @@ class _EncoderSink extends StringConversionSinkBase {
   }
 }
 
-class CP1251Decoder extends Converter<List<int>, String> {
-  const CP1251Decoder({this.allowInvalid = false});
+class Windows1251Decoder extends Converter<List<int>, String> {
+  const Windows1251Decoder({this.allowInvalid = false});
 
   final bool allowInvalid;
 
@@ -195,7 +193,7 @@ class _DecoderSink extends ByteConversionSinkBase {
 
   final bool allowInvalid;
 
-  final CP1251Decoder decoder;
+  final Windows1251Decoder decoder;
 
   @override
   void close() {

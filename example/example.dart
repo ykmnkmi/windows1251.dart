@@ -1,6 +1,8 @@
-import 'package:cp1251/cp1251.dart';
+import 'package:cp1251/windows1251.dart';
 
 void main() {
-  print(cp1251.decode([207, 240, 232, 226, 229, 242, 33]));
-  print(cp1251.encode('Привет!'));
+  // 'Привет!'
+  print(windows1251.decode([207, 240, 232, 226, 229, 242, 33]));
+  // [207, 240, 232, 226, 229, 242, 33]
+  print(windows1251.encode('Привет!'));
 }

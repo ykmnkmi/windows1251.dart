@@ -1,25 +1,21 @@
-Cyrillic `Windows-1251` / `cp-1251` encoding for Dart.
+# windows-1251
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+`windows-1251` (`cp1251`) Dart implementation.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:cp1251/windows1251.dart';
+
+void main() {
+  // >>> 'Привет!'
+  print(windows1251.decode([207, 240, 232, 226, 229, 242, 33]));
+  // >>> [207, 240, 232, 226, 229, 242, 33]
+  print(windows1251.encode('Привет!'));
+}
 ```
 
-## Additional information
+## Contributing
+If you found a bug, just create a [new issue][new_issue] or even better fork and issue a pull request with your fix.
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+[new_issue]: https://github.com/ykmnkmi/windows1251.dart/issues/new
