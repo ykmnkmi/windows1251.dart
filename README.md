@@ -1,6 +1,6 @@
 # windows-1251
 
-`windows-1251` (`cp1251`) Dart implementation.
+Cyrillic `windows-1251` (`cp1251`) encoding implementation for Dart.
 
 ## Usage
 
