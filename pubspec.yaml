@@ -1,6 +1,6 @@
 name: windows1251
 description: Cyrillic windows-1251 (cp1251) encoding implementation for Dart.
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/ykmnkmi/windows1251.dart
 
 environment:
