@@ -1,4 +1,4 @@
-import 'package:cp1251/windows1251.dart';
+import 'package:windows1251/windows1251.dart';
 
 void main() {
   // 'Привет!'

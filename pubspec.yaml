@@ -1,4 +1,4 @@
-name: cp1251
+name: windows1251
 description: Cyrillic Windows-1251 / cp-1251 encoding for Dart.
 version: 0.0.1
 # homepage: https://www.example.com
