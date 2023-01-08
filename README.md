@@ -1,5 +1,9 @@
 # windows-1251
 
+[![Pub Package][pub_icon]][pub]
+[![Test Status][test_ci_icon]][test_ci]
+[![CodeCov][codecov_icon]][codecov]
+
 Cyrillic `windows-1251` (`cp1251`) encoding implementation for Dart.
 
 ## Usage
@@ -15,7 +19,21 @@ void main() {
 }
 ```
 
-## Contributing
-If you found a bug, just create a [new issue][new_issue] or even better fork and issue a pull request with your fix.
+## License
+
+This project is licensed under the MIT license.
+
+## Features and bugs
+
+Please file feature requests and bugs at the [issue tracker][tracker].
 
 [new_issue]: https://github.com/ykmnkmi/windows1251.dart/issues/new
+
+[pub_icon]: https://img.shields.io/pub/v/windows1251.svg
+[pub]: https://pub.dev/packages/windows1251
+[test_ci_icon]: https://github.com/ykmnkmi/windows1251.dart/actions/workflows/test.yaml/badge.svg
+[test_ci]: https://github.com/ykmnkmi/windows1251.dart/actions/workflows/test.yaml
+[codecov_icon]: https://codecov.io/gh/ykmnkmi/windows1251.dart/branch/main/graph/badge.svg?token=4J5FJUJ6GX
+[codecov]: https://codecov.io/gh/ykmnkmi/windows1251.dart
+[windows1251.svg]: https://img.shields.io/pub/v/windows1251.svg
+[tracker]: https://github.com/ykmnkmi/windows1251.dart/issues

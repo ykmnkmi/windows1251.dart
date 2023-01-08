@@ -1,5 +1,5 @@
-import 'package:windows1251/windows1251.dart';
 import 'package:test/test.dart';
+import 'package:windows1251/windows1251.dart';
 
 const List<int> bytes = <int>[207, 240, 232, 226, 229, 242, 33];
 

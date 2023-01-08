@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:windows1251/windows1251.dart';
 
 void main() {

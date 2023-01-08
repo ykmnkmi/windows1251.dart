@@ -37,7 +37,7 @@ class Windows1251Codec extends Encoding {
 
   @override
   String decode(List<int> encoded, {bool? allowInvalid}) {
-    final encoding = allowInvalid ?? this.allowInvalid
+    var encoding = allowInvalid ?? this.allowInvalid
         ? const Windows1251Decoder(allowInvalid: true)
         : const Windows1251Decoder(allowInvalid: false);
     return encoding.convert(encoded);
@@ -45,7 +45,7 @@ class Windows1251Codec extends Encoding {
 
   @override
   Uint8List encode(String input, {bool? allowInvalid}) {
-    final encoding = allowInvalid ?? this.allowInvalid
+    var encoding = allowInvalid ?? this.allowInvalid
         ? const Windows1251Encoder(allowInvalid: true)
         : const Windows1251Encoder(allowInvalid: false);
     return encoding.convert(input);
@@ -80,18 +80,18 @@ class Windows1251Encoder extends Converter<String, List<int>> {
       return Uint8List(0);
     }
 
-    final bytes = Uint8List(end - start);
+    var bytes = Uint8List(end - start);
 
     for (var i = start; i < end; i++) {
-      final rune = runes[i];
-      final value = dictionary[rune];
+      var rune = runes[i];
+      var value = dictionary[rune];
 
       if (value == null) {
         if (allowInvalid) {
           bytes[i] = 0x3F;
         } else {
-          final message = 'Contains invalid characters.';
-          throw ArgumentError.value(input, 'string', message);
+          throw ArgumentError.value(
+              input, 'string', 'Contains invalid characters.');
         }
       } else {
         bytes[i] = value;
@@ -153,12 +153,11 @@ class Windows1251Decoder extends Converter<List<int>, String> {
     List<int>? modified;
 
     for (var i = start; i < end; i++) {
-      final byte = input[i];
+      var byte = input[i];
 
       if ((byte & ~0xFF) != 0) {
         if (!allowInvalid) {
-          final message = 'Invalid value in input: $byte';
-          throw FormatException(message);
+          throw FormatException('Invalid value in input: $byte');
         } else {
           modified ??= input.toList(growable: false);
           modified[i] = 0xFFFD;
