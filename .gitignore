@@ -2,4 +2,6 @@
 .vscode/
 .packages
 build/
+coverage/
+doc/
 pubspec.lock
