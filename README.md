@@ -33,7 +33,6 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 [pub]: https://pub.dev/packages/windows1251
 [test_ci_icon]: https://github.com/ykmnkmi/windows1251.dart/actions/workflows/test.yaml/badge.svg
 [test_ci]: https://github.com/ykmnkmi/windows1251.dart/actions/workflows/test.yaml
-[codecov_icon]: https://codecov.io/gh/ykmnkmi/windows1251.dart/branch/main/graph/badge.svg?token=4J5FJUJ6GX
+[codecov_icon]: https://codecov.io/gh/ykmnkmi/windows1251.dart/branch/master/graph/badge.svg?token=LSU9C5W147
 [codecov]: https://codecov.io/gh/ykmnkmi/windows1251.dart
-[windows1251.svg]: https://img.shields.io/pub/v/windows1251.svg
 [tracker]: https://github.com/ykmnkmi/windows1251.dart/issues
