@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Update README.md links.
+
 ## 1.0.1
 
 - Update README.md links.
