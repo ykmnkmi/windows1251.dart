@@ -31,9 +31,7 @@ class Windows1251Codec extends Encoding {
 
   /// The name of this codec, 'windows1251'.
   @override
-  String get name {
-    return 'windows1251';
-  }
+  final String name = 'windows1251';
 
   @override
   String decode(List<int> encoded, {bool? allowInvalid}) {
@@ -83,18 +81,15 @@ class Windows1251Encoder extends Converter<String, List<int>> {
     var bytes = Uint8List(end - start);
 
     for (var i = start; i < end; i++) {
-      var rune = runes[i];
-      var value = dictionary[rune];
-
-      if (value == null) {
+      if (dictionary[runes[i]] case int value?) {
+        bytes[i] = value;
+      } else {
         if (allowInvalid) {
           bytes[i] = 0x3F;
         } else {
           throw ArgumentError.value(
-              input, 'string', 'Contains invalid characters.');
+              input, 'input', 'Contains invalid characters.');
         }
-      } else {
-        bytes[i] = value;
       }
     }
 
@@ -155,12 +150,12 @@ class Windows1251Decoder extends Converter<List<int>, String> {
     for (var i = start; i < end; i++) {
       var byte = input[i];
 
-      if ((byte & ~0xFF) != 0) {
-        if (!allowInvalid) {
-          throw FormatException('Invalid value in input: $byte');
-        } else {
+      if (byte & ~0xFF != 0) {
+        if (allowInvalid) {
           modified ??= input.toList(growable: false);
           modified[i] = 0xFFFD;
+        } else {
+          throw FormatException('Invalid value in input: $byte');
         }
       } else if (byte > 0x7F) {
         modified ??= input.toList(growable: false);

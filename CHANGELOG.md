@@ -1,3 +1,8 @@
+## 2.0.0
+
+- Minimal SDK version: 3.0.0.
+- Refactoring.
+
 ## 1.0.2
 
 - Update README.md links.
