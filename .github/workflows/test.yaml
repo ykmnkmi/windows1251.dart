@@ -22,7 +22,7 @@ jobs:
           - dev
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: dart-lang/setup-dart@v1
         with:
           sdk: ${{ matrix.sdk }}
@@ -38,11 +38,11 @@ jobs:
 
       - name: Run Tests
         run: |
-          dart pub global activate coverage 1.6.3
+          dart pub global activate coverage
           dart test --coverage=coverage && dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --report-on=lib
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
         if: matrix.sdk == 'stable'
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
