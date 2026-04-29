@@ -1,136 +1,136 @@
 // CODEPAGE 1251
 // https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/bestfit1251.txt
 
-const List<int> symbols = <int>[
-  0x0402, // 0x80; Cyrillic Capital Letter Dje
-  0x0403, // 0x81; Cyrillic Capital Letter Gje
-  0x201A, // 0x82; Single Low-9 Quotation Mark
-  0x0453, // 0x83; Cyrillic Small Letter Gje
-  0x201E, // 0x84; Double Low-9 Quotation Mark
-  0x2026, // 0x85; Horizontal Ellipsis
-  0x2020, // 0x86; Dagger
-  0x2021, // 0x87; Double Dagger
-  0x20AC, // 0x88; Euro Sign
-  0x2030, // 0x89; Per Mille Sign
-  0x0409, // 0x8A; Cyrillic Capital Letter Lje
-  0x2039, // 0x8B; Single Left-Pointing Angle Quotation Mark
-  0x040A, // 0x8C; Cyrillic Capital Letter Nje
-  0x040C, // 0x8D; Cyrillic Capital Letter Kje
-  0x040B, // 0x8E; Cyrillic Capital Letter Tshe
-  0x040F, // 0x8F; Cyrillic Capital Letter Dzhe
-  0x0452, // 0x90; Cyrillic Small Letter Dje
-  0x2018, // 0x91; Left Single Quotation Mark
-  0x2019, // 0x92; Right Single Quotation Mark
-  0x201C, // 0x93; Left Double Quotation Mark
-  0x201D, // 0x94; Right Double Quotation Mark
-  0x2022, // 0x95; Bullet
-  0x2013, // 0x96; En Dash
-  0x2014, // 0x97; Em Dash
-  0x0098, // 0x98;
-  0x2122, // 0x99; Trade Mark Sign
-  0x0459, // 0x9A; Cyrillic Small Letter Lje
-  0x203A, // 0x9B; Single Right-Pointing Angle Quotation Mark
-  0x045A, // 0x9C; Cyrillic Small Letter Nje
-  0x045C, // 0x9D; Cyrillic Small Letter Kje
-  0x045B, // 0x9E; Cyrillic Small Letter Tshe
-  0x045F, // 0x9F; Cyrillic Small Letter Dzhe
-  0x00A0, // 0xA0; No-Break Space
-  0x040E, // 0xA1; Cyrillic Capital Letter Short U
-  0x045E, // 0xA2; Cyrillic Small Letter Short U
-  0x0408, // 0xA3; Cyrillic Capital Letter Je
-  0x00A4, // 0xA4; Currency Sign
-  0x0490, // 0xA5; Cyrillic Capital Letter Ghe With Upturn
-  0x00A6, // 0xA6; Broken Bar
-  0x00A7, // 0xA7; Section Sign
-  0x0401, // 0xA8; Cyrillic Capital Letter Io
-  0x00A9, // 0xA9; Copyright Sign
-  0x0404, // 0xAA; Cyrillic Capital Letter Ukrainian Ie
-  0x00AB, // 0xAB; Left-Pointing Double Angle Quotation Mark
-  0x00AC, // 0xAC; Not Sign
-  0x00AD, // 0xAD; Soft Hyphen
-  0x00AE, // 0xAE; Registered Sign
-  0x0407, // 0xAF; Cyrillic Capital Letter Yi
-  0x00B0, // 0xB0; Degree Sign
-  0x00B1, // 0xB1; Plus-Minus Sign
-  0x0406, // 0xB2; Cyrillic Capital Letter Byelorussian-Ukrainian I
-  0x0456, // 0xB3; Cyrillic Small Letter Byelorussian-Ukrainian I
-  0x0491, // 0xB4; Cyrillic Small Letter Ghe With Upturn
-  0x00B5, // 0xB5; Micro Sign
-  0x00B6, // 0xB6; Pilcrow Sign
-  0x00B7, // 0xB7; Middle Dot
-  0x0451, // 0xB8; Cyrillic Small Letter Io
-  0x2116, // 0xB9; Numero Sign
-  0x0454, // 0xBA; Cyrillic Small Letter Ukrainian Ie
-  0x00BB, // 0xBB; Right-Pointing Double Angle Quotation Mark
-  0x0458, // 0xBC; Cyrillic Small Letter Je
-  0x0405, // 0xBD; Cyrillic Capital Letter Dze
-  0x0455, // 0xBE; Cyrillic Small Letter Dze
-  0x0457, // 0xBF; Cyrillic Small Letter Yi
-  0x0410, // 0xC0; Cyrillic Capital Letter A
-  0x0411, // 0xC1; Cyrillic Capital Letter Be
-  0x0412, // 0xC2; Cyrillic Capital Letter Ve
-  0x0413, // 0xC3; Cyrillic Capital Letter Ghe
-  0x0414, // 0xC4; Cyrillic Capital Letter De
-  0x0415, // 0xC5; Cyrillic Capital Letter Ie
-  0x0416, // 0xC6; Cyrillic Capital Letter Zhe
-  0x0417, // 0xC7; Cyrillic Capital Letter Ze
-  0x0418, // 0xC8; Cyrillic Capital Letter I
-  0x0419, // 0xC9; Cyrillic Capital Letter Short I
-  0x041A, // 0xCA; Cyrillic Capital Letter Ka
-  0x041B, // 0xCB; Cyrillic Capital Letter El
-  0x041C, // 0xCC; Cyrillic Capital Letter Em
-  0x041D, // 0xCD; Cyrillic Capital Letter En
-  0x041E, // 0xCE; Cyrillic Capital Letter O
-  0x041F, // 0xCF; Cyrillic Capital Letter Pe
-  0x0420, // 0xD0; Cyrillic Capital Letter Er
-  0x0421, // 0xD1; Cyrillic Capital Letter Es
-  0x0422, // 0xD2; Cyrillic Capital Letter Te
-  0x0423, // 0xD3; Cyrillic Capital Letter U
-  0x0424, // 0xD4; Cyrillic Capital Letter Ef
-  0x0425, // 0xD5; Cyrillic Capital Letter Ha
-  0x0426, // 0xD6; Cyrillic Capital Letter Tse
-  0x0427, // 0xD7; Cyrillic Capital Letter Che
-  0x0428, // 0xD8; Cyrillic Capital Letter Sha
-  0x0429, // 0xD9; Cyrillic Capital Letter Shcha
-  0x042A, // 0xDA; Cyrillic Capital Letter Hard Sign
-  0x042B, // 0xDB; Cyrillic Capital Letter Yeru
-  0x042C, // 0xDC; Cyrillic Capital Letter Soft Sign
-  0x042D, // 0xDD; Cyrillic Capital Letter E
-  0x042E, // 0xDE; Cyrillic Capital Letter Yu
-  0x042F, // 0xDF; Cyrillic Capital Letter Ya
-  0x0430, // 0xE0; Cyrillic Small Letter A
-  0x0431, // 0xE1; Cyrillic Small Letter Be
-  0x0432, // 0xE2; Cyrillic Small Letter Ve
-  0x0433, // 0xE3; Cyrillic Small Letter Ghe
-  0x0434, // 0xE4; Cyrillic Small Letter De
-  0x0435, // 0xE5; Cyrillic Small Letter Ie
-  0x0436, // 0xE6; Cyrillic Small Letter Zhe
-  0x0437, // 0xE7; Cyrillic Small Letter Ze
-  0x0438, // 0xE8; Cyrillic Small Letter I
-  0x0439, // 0xE9; Cyrillic Small Letter Short I
-  0x043A, // 0xEA; Cyrillic Small Letter Ka
-  0x043B, // 0xEB; Cyrillic Small Letter El
-  0x043C, // 0xEC; Cyrillic Small Letter Em
-  0x043D, // 0xED; Cyrillic Small Letter En
-  0x043E, // 0xEE; Cyrillic Small Letter O
-  0x043F, // 0xEF; Cyrillic Small Letter Pe
-  0x0440, // 0xF0; Cyrillic Small Letter Er
-  0x0441, // 0xF1; Cyrillic Small Letter Es
-  0x0442, // 0xF2; Cyrillic Small Letter Te
-  0x0443, // 0xF3; Cyrillic Small Letter U
-  0x0444, // 0xF4; Cyrillic Small Letter Ef
-  0x0445, // 0xF5; Cyrillic Small Letter Ha
-  0x0446, // 0xF6; Cyrillic Small Letter Tse
-  0x0447, // 0xF7; Cyrillic Small Letter Che
-  0x0448, // 0xF8; Cyrillic Small Letter Sha
-  0x0449, // 0xF9; Cyrillic Small Letter Shcha
-  0x044A, // 0xFA; Cyrillic Small Letter Hard Sign
-  0x044B, // 0xFB; Cyrillic Small Letter Yeru
-  0x044C, // 0xFC; Cyrillic Small Letter Soft Sign
-  0x044D, // 0xFD; Cyrillic Small Letter E
-  0x044E, // 0xFE; Cyrillic Small Letter Yu
-  0x044F, // 0xFF; Cyrillic Small Letter Ya
-];
+const String symbols =
+    '\u0402' // 0x80; Cyrillic Capital Letter Dje
+    '\u0403' // 0x81; Cyrillic Capital Letter Gje
+    '\u201A' // 0x82; Single Low-9 Quotation Mark
+    '\u0453' // 0x83; Cyrillic Small Letter Gje
+    '\u201E' // 0x84; Double Low-9 Quotation Mark
+    '\u2026' // 0x85; Horizontal Ellipsis
+    '\u2020' // 0x86; Dagger
+    '\u2021' // 0x87; Double Dagger
+    '\u20AC' // 0x88; Euro Sign
+    '\u2030' // 0x89; Per Mille Sign
+    '\u0409' // 0x8A; Cyrillic Capital Letter Lje
+    '\u2039' // 0x8B; Single Left-Pointing Angle Quotation Mark
+    '\u040A' // 0x8C; Cyrillic Capital Letter Nje
+    '\u040C' // 0x8D; Cyrillic Capital Letter Kje
+    '\u040B' // 0x8E; Cyrillic Capital Letter Tshe
+    '\u040F' // 0x8F; Cyrillic Capital Letter Dzhe
+    '\u0452' // 0x90; Cyrillic Small Letter Dje
+    '\u2018' // 0x91; Left Single Quotation Mark
+    '\u2019' // 0x92; Right Single Quotation Mark
+    '\u201C' // 0x93; Left Double Quotation Mark
+    '\u201D' // 0x94; Right Double Quotation Mark
+    '\u2022' // 0x95; Bullet
+    '\u2013' // 0x96; En Dash
+    '\u2014' // 0x97; Em Dash
+    '\u0098' // 0x98;
+    '\u2122' // 0x99; Trade Mark Sign
+    '\u0459' // 0x9A; Cyrillic Small Letter Lje
+    '\u203A' // 0x9B; Single Right-Pointing Angle Quotation Mark
+    '\u045A' // 0x9C; Cyrillic Small Letter Nje
+    '\u045C' // 0x9D; Cyrillic Small Letter Kje
+    '\u045B' // 0x9E; Cyrillic Small Letter Tshe
+    '\u045F' // 0x9F; Cyrillic Small Letter Dzhe
+    '\u00A0' // 0xA0; No-Break Space
+    '\u040E' // 0xA1; Cyrillic Capital Letter Short U
+    '\u045E' // 0xA2; Cyrillic Small Letter Short U
+    '\u0408' // 0xA3; Cyrillic Capital Letter Je
+    '\u00A4' // 0xA4; Currency Sign
+    '\u0490' // 0xA5; Cyrillic Capital Letter Ghe With Upturn
+    '\u00A6' // 0xA6; Broken Bar
+    '\u00A7' // 0xA7; Section Sign
+    '\u0401' // 0xA8; Cyrillic Capital Letter Io
+    '\u00A9' // 0xA9; Copyright Sign
+    '\u0404' // 0xAA; Cyrillic Capital Letter Ukrainian Ie
+    '\u00AB' // 0xAB; Left-Pointing Double Angle Quotation Mark
+    '\u00AC' // 0xAC; Not Sign
+    '\u00AD' // 0xAD; Soft Hyphen
+    '\u00AE' // 0xAE; Registered Sign
+    '\u0407' // 0xAF; Cyrillic Capital Letter Yi
+    '\u00B0' // 0xB0; Degree Sign
+    '\u00B1' // 0xB1; Plus-Minus Sign
+    '\u0406' // 0xB2; Cyrillic Capital Letter Byelorussian-Ukrainian I
+    '\u0456' // 0xB3; Cyrillic Small Letter Byelorussian-Ukrainian I
+    '\u0491' // 0xB4; Cyrillic Small Letter Ghe With Upturn
+    '\u00B5' // 0xB5; Micro Sign
+    '\u00B6' // 0xB6; Pilcrow Sign
+    '\u00B7' // 0xB7; Middle Dot
+    '\u0451' // 0xB8; Cyrillic Small Letter Io
+    '\u2116' // 0xB9; Numero Sign
+    '\u0454' // 0xBA; Cyrillic Small Letter Ukrainian Ie
+    '\u00BB' // 0xBB; Right-Pointing Double Angle Quotation Mark
+    '\u0458' // 0xBC; Cyrillic Small Letter Je
+    '\u0405' // 0xBD; Cyrillic Capital Letter Dze
+    '\u0455' // 0xBE; Cyrillic Small Letter Dze
+    '\u0457' // 0xBF; Cyrillic Small Letter Yi
+    '\u0410' // 0xC0; Cyrillic Capital Letter A
+    '\u0411' // 0xC1; Cyrillic Capital Letter Be
+    '\u0412' // 0xC2; Cyrillic Capital Letter Ve
+    '\u0413' // 0xC3; Cyrillic Capital Letter Ghe
+    '\u0414' // 0xC4; Cyrillic Capital Letter De
+    '\u0415' // 0xC5; Cyrillic Capital Letter Ie
+    '\u0416' // 0xC6; Cyrillic Capital Letter Zhe
+    '\u0417' // 0xC7; Cyrillic Capital Letter Ze
+    '\u0418' // 0xC8; Cyrillic Capital Letter I
+    '\u0419' // 0xC9; Cyrillic Capital Letter Short I
+    '\u041A' // 0xCA; Cyrillic Capital Letter Ka
+    '\u041B' // 0xCB; Cyrillic Capital Letter El
+    '\u041C' // 0xCC; Cyrillic Capital Letter Em
+    '\u041D' // 0xCD; Cyrillic Capital Letter En
+    '\u041E' // 0xCE; Cyrillic Capital Letter O
+    '\u041F' // 0xCF; Cyrillic Capital Letter Pe
+    '\u0420' // 0xD0; Cyrillic Capital Letter Er
+    '\u0421' // 0xD1; Cyrillic Capital Letter Es
+    '\u0422' // 0xD2; Cyrillic Capital Letter Te
+    '\u0423' // 0xD3; Cyrillic Capital Letter U
+    '\u0424' // 0xD4; Cyrillic Capital Letter Ef
+    '\u0425' // 0xD5; Cyrillic Capital Letter Ha
+    '\u0426' // 0xD6; Cyrillic Capital Letter Tse
+    '\u0427' // 0xD7; Cyrillic Capital Letter Che
+    '\u0428' // 0xD8; Cyrillic Capital Letter Sha
+    '\u0429' // 0xD9; Cyrillic Capital Letter Shcha
+    '\u042A' // 0xDA; Cyrillic Capital Letter Hard Sign
+    '\u042B' // 0xDB; Cyrillic Capital Letter Yeru
+    '\u042C' // 0xDC; Cyrillic Capital Letter Soft Sign
+    '\u042D' // 0xDD; Cyrillic Capital Letter E
+    '\u042E' // 0xDE; Cyrillic Capital Letter Yu
+    '\u042F' // 0xDF; Cyrillic Capital Letter Ya
+    '\u0430' // 0xE0; Cyrillic Small Letter A
+    '\u0431' // 0xE1; Cyrillic Small Letter Be
+    '\u0432' // 0xE2; Cyrillic Small Letter Ve
+    '\u0433' // 0xE3; Cyrillic Small Letter Ghe
+    '\u0434' // 0xE4; Cyrillic Small Letter De
+    '\u0435' // 0xE5; Cyrillic Small Letter Ie
+    '\u0436' // 0xE6; Cyrillic Small Letter Zhe
+    '\u0437' // 0xE7; Cyrillic Small Letter Ze
+    '\u0438' // 0xE8; Cyrillic Small Letter I
+    '\u0439' // 0xE9; Cyrillic Small Letter Short I
+    '\u043A' // 0xEA; Cyrillic Small Letter Ka
+    '\u043B' // 0xEB; Cyrillic Small Letter El
+    '\u043C' // 0xEC; Cyrillic Small Letter Em
+    '\u043D' // 0xED; Cyrillic Small Letter En
+    '\u043E' // 0xEE; Cyrillic Small Letter O
+    '\u043F' // 0xEF; Cyrillic Small Letter Pe
+    '\u0440' // 0xF0; Cyrillic Small Letter Er
+    '\u0441' // 0xF1; Cyrillic Small Letter Es
+    '\u0442' // 0xF2; Cyrillic Small Letter Te
+    '\u0443' // 0xF3; Cyrillic Small Letter U
+    '\u0444' // 0xF4; Cyrillic Small Letter Ef
+    '\u0445' // 0xF5; Cyrillic Small Letter Ha
+    '\u0446' // 0xF6; Cyrillic Small Letter Tse
+    '\u0447' // 0xF7; Cyrillic Small Letter Che
+    '\u0448' // 0xF8; Cyrillic Small Letter Sha
+    '\u0449' // 0xF9; Cyrillic Small Letter Shcha
+    '\u044A' // 0xFA; Cyrillic Small Letter Hard Sign
+    '\u044B' // 0xFB; Cyrillic Small Letter Yeru
+    '\u044C' // 0xFC; Cyrillic Small Letter Soft Sign
+    '\u044D' // 0xFD; Cyrillic Small Letter E
+    '\u044E' // 0xFE; Cyrillic Small Letter Yu
+    '\u044F' // 0xFF; Cyrillic Small Letter Ya
+    ;
 
 const Map<int, int> dictionary = <int, int>{
   0x0000: 0x00, // Null

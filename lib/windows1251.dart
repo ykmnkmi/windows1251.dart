@@ -222,6 +222,7 @@ class Windows1251Decoder extends Converter<List<int>, String> {
   @override
   String convert(List<int> input, [int start = 0, int? end]) {
     end = RangeError.checkValidRange(start, end, input.length);
+
     List<int>? modified;
 
     for (var i = start; i < end; i++) {
@@ -236,7 +237,7 @@ class Windows1251Decoder extends Converter<List<int>, String> {
         }
       } else if (byte > 0x7F) {
         modified ??= input.toList(growable: false);
-        modified[i] = symbols[byte - 0x80];
+        modified[i] = symbols.codeUnitAt(byte - 0x80);
       }
     }
 

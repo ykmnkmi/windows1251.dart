@@ -1,3 +1,9 @@
+## 2.1.0
+
+- Minimal SDK version: 3.11.0.
+- Bump dependencies.
+- Topics update.
+
 ## 2.0.1
 
 - Minimal SDK version: 3.8.0.
